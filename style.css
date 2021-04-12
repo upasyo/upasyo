@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+  margin:0;
+  padding:0;
+}
+
+/* HEADINGS */
+.image{
+  position:relative;
+  left:70%;
+}
+
+@media only screen and (max-device-width:300px){
+.image{
+  position:relative;
+  left:30%;
+}
+
+}
+
+.intro{
+ position:relative;
+  text-align:center;
+}
+#part{
+  position:fixed;
+  width:100%;
+  height:450px;
+}
+h1, p {
+  color: #fff;
+  text-align: center;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  color: #000;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+#logo{
+  width:1350px;
+  height:500px;
+}
+
+
+@media only screen and (max-device-width:550px){
+  #logo{
+  width: 320px;
+  height:400px;
+  }
+}
+
+@media only screen and (min-device-width:600px) and(max-device-width:1000px){
+  #logo{
+  width: 960px;
+  height:400px;
+  }
+}
+
+.grad-bar {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+
+
+/* KEYFRAME ANIMATIONS */
+
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans&display=swap");
+
+.pie {
+  -webkit-tap-highlight-color: transparent;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 400px;
+  left: -200px;
+  position: absolute;
+  top: -250px;
+  width: 400px;
+  transform: translateX(-200px) translateY(-200px);
+  transition: transform 300ms;
+}
+@media only screen and(min-width:920px){
+  .pie {
+  -webkit-tap-highlight-color: transparent;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 400px;
+  left: -200px;
+  position: absolute;
+  top: -260px;
+  width: 400px;
+  transform: translateX(-200px) translateY(-200px);
+  transition: transform 300ms;
+}
+}
+.pie-color:hover {
+  opacity: 0.85;
+}
+.pie-color:active {
+  opacity: 0.7;
+}
+.pie1 {
+  clip-path: polygon(200px 200px, 344px 450px, 0 450px);
+  transition-delay: 30ms;
+}
+.pie2 {
+  clip-path: polygon(200px 200px, 344px 450px, 450px 344px);
+  transition-delay: 60ms;
+}
+.pie3 {
+  clip-path: polygon(200px 200px, 450px 0, 450px 344px);
+  transition-delay: 90ms;
+}
+.pie-color {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.pie-color1 {
+  background: linear-gradient(135deg, #f12711, #f5af19);
+  clip-path: polygon(200px 200px, 344px 450px, 0 450px);
+}
+.pie-color2 {
+  background: linear-gradient(135deg, #444, #7e84f9);
+  clip-path: polygon(200px 200px, 344px 450px, 450px 344px);
+}
+.pie-color3 {
+  background: linear-gradient(135deg, #444, #b7e13f);
+  clip-path: polygon(200px 200px, 450px 0, 450px 344px);
+}
+.card {
+  left: 216px;
+  position: absolute;
+  top: 300px;
+  width: 46px;
+}
+.discount {
+  left: 288px;
+  position: absolute;
+  top: 258px;
+  width: 46px;
+}
+.cart {
+  left: 324px;
+  position: absolute;
+  top: 188px;
+  width: 46px;
+}
+.menu {
+  -webkit-tap-highlight-color: transparent;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 150px;
+  left: -100px;
+  position: absolute;
+  top: -125px;
+  width: 200px;
+}
+.hamburger {
+  cursor: pointer;
+  height: 50px;
+  left: 25%;
+  position: relative;
+  top: 50%;
+  width: 46px;
+}
+@media only screen and(min-device-width:920px){
+  .menu {
+  -webkit-tap-highlight-color: transparent;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 120px;
+  left: -100px;
+  position: absolute;
+  top: -140px;
+  width: 200px;
+}
+.hamburger {
+  cursor: pointer;
+  height: 50px;
+  left: 25%;
+  position: relative;
+  top: 32%;
+  width: 46px;
+}
+}
+.title {
+  color: white;
+  font-family: "Crimson Text", serif;
+  font-size: 80px;
+  line-height: 84px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.hamburger path {
+  transition: transform 300ms;
+}
+.hamburger path:nth-child(1) {
+  transform-origin: 25% 29%;
+}
+.hamburger path:nth-child(2) {
+  transform-origin: 50% 50%;
+}
+.hamburger path:nth-child(3) {
+  transform-origin: 75% 72%;
+}
+.hamburger path:nth-child(4) {
+  transform-origin: 75% 29%;
+}
+.hamburger path:nth-child(5) {
+  transform-origin: 25% 72%;
+}
+.active .pie {
+  transform: translateX(0) translateY(0);
+}
+.active .hamburger path:nth-child(1) {
+  transform: rotate(45deg);
+}
+.active .hamburger path:nth-child(2) {
+  transform: scaleX(0);
+}
+.active .hamburger path:nth-child(3) {
+  transform: rotate(45deg);
+}
+.active .hamburger path:nth-child(4) {
+  transform: rotate(-45deg);
+}
+.active .hamburger path:nth-child(5) {
+  transform: rotate(-45deg);
+}
+
+
