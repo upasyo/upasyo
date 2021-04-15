@@ -25,26 +25,20 @@
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
     <meta name="theme-color" content="#ff9900"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="aos.css"/>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-		
+	
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
-		<!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-183093746-1', 'auto');
-ga('send', 'pageview' );
-</script>
-<!-- End Google Analytics -->
-
-
-    
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="Mike"
+    agent-id="b8d994fe-dd38-40d5-9452-ab2312d8b575"
+    language-code="en"
+  ></df-messenger>
 <script>
      document.onkeypress = function (event) {
 event = (event || window.event);
@@ -95,22 +89,19 @@ return false;
   };
   </script>
   </head>
-  <body background="https://entertainment-rick.coffeecup.com/background.jpg">
+  <body background="https://entertainment-rick.coffeecup.com/background.jpg" onload="checkCookie()">
 
+   
+    <script src="aos.js"></script>
     <div class="grad-bar"></div>
-    <div class="bar">
-    <style>
-      .bar{
-        position: -webkit-sticky;
-        position: sticky;
-        width:100%;
-        background-color:white;
-      }
-    </style>
+    <div class="origin">
+    <div id="bar">
+  
         <div class="mobilelogo">
          <img class="image" src="new.PNG">
         </div>
-        </div>
+      </div>
+    </div>
       
         
 <div class="intro">
@@ -154,15 +145,105 @@ return false;
           </g>
         </svg>
   </div>
-    <div id="lgo">
-  <img id="logo" src="https://i.postimg.cc/1tMDPg70/DMDIKcy-Ws-AEs-KDj.jpg" alt="background">
-    </div>
-    <div class="container">
+
+  <img id="logo" src="https://i.postimg.cc/1tMDPg70/DMDIKcy-Ws-AEs-KDj.jpg" alt="background" >
+ 
+<div id="marque"></div>
+  <script>
+    function setCookie(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    
+    function checkCookie() {
+      var user=getCookie("username");
+      if (user != "") {
+        $('#marque').html('<marquee behavior="scroll" direction="left"  onmouseout="this.start();" onmouseover="this.stop();"  scrollamount="7"><strong> <span style="color:#FF0000;"><b>Welcome '+user + ' To Upasyos Personal Site</b></span> </strong></marquee>');
+      } else {
+         user = prompt("Please enter your Name:","");
+         if (user != "" && user != null) {
+           setCookie("username", user, 30);
+           location.reload(-1);
+         }
+      }
+    }
+    </script>
+
+  <div class="js-scroll-counter scroll-counter"></div>
+  <script>
+    document.querySelector('html').classList.remove('no-js');
+    if (!window.Cypress) {
+      const scrollCounter = document.querySelector('.js-scroll-counter');
+
+      AOS.init({
+        mirror: true
+      });
+
+      document.addEventListener('aos:in', function(e) {
+        console.log('in!', e.detail);
+      });
+
+      window.addEventListener('scroll', function() {
+        scrollCounter.innerHTML = window.pageYOffset;
+      });
+    }
+  </script>
+
+<style>
+  .scroll-counter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+}
+
+</style>
+<style>
+    @media only screen and(max-device-width:590px){
+#logo{
+  width:40px;
+  height:100px;
+  overflow:-moz-hidden-unscrollable;
+  overflow-x: -moz-hidden-unscrollable;
+
+}
+ }
+
+
+  #logo{
+    width:100%;
+    height:400px;
+    overflow:-moz-hidden-unscrollable;
+  }
+
+  </style>
+
+    <div class="container" >
       <p>Upasyo is a<span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
     </div>
-  </div>
-  
-  
+ 
+
+</div>
 <script src="type.js"></script>
 
 <style>
@@ -180,7 +261,7 @@ return false;
 
 
 .container p {
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 0.5rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
@@ -213,4 +294,85 @@ return false;
 
 
 
+
+
+  <style>
+    .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.image{
+  position:relative;
+  left:65%;
+}
+
+@media only screen and (max-device-width:630px){
+.image{
+  position:relative;
+  left:42%;
+}
+
+}
+@media only screen and (device-width:380px){
+.image{
+  position:relative;
+  left:47%;
+}
+
+}
+@media only screen and (device-width:378px){
+.image{
+  position:relative;
+  left:47%;
+}
+
+}
+@media only screen and (device-width:379px){
+.image{
+  position:relative;
+  left:47%;
+}
+
+}
+@media only screen and (device-width:382px){
+.image{
+  position:relative;
+  left:47%;
+}
+
+}
+@media only screen and (device-width:383px){
+.image{
+  position:relative;
+  left:47%;
+}
+
+}
+@media only screen and (device-width:385px){
+.image{
+  position:relative;
+  left:47%;
+}
+
+}
+
+  </style>
+  
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("bar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
+    
+   
     </body>
