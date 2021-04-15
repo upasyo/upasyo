@@ -13,7 +13,6 @@ body{
         position: -webkit-sticky;
         position: sticky;
         width:100%;
-	max-width:100%;
         background-color:white;
       }
  
@@ -46,19 +45,6 @@ h2 {
 }
 
 
-
-
-
-@media only screen and (max-device-width:390px){
-  #bar{
-    position: -webkit-sticky;
-    position: sticky;
-    width:100%;
-    background-color:white;
-
-  }
-
-}
 
 .grad-bar {
   width: 100%;
