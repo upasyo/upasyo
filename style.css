@@ -4,21 +4,18 @@ body{
 	font-family: 'Roboto', sans-serif;
   margin:0;
   padding:0;
+  overflow-x: -moz-hidden-unscrollable;
+  overflow-x:hidden;
 }
 
-/* HEADINGS */
-.image{
-  position:relative;
-  left:70%;
-}
 
-@media only screen and (max-device-width:300px){
-.image{
-  position:relative;
-  left:30%;
-}
-
-}
+      #bar{
+        position: -webkit-sticky;
+        position: sticky;
+        width:100%;
+        background-color:white;
+      }
+ 
 
 .intro{
  position:relative;
@@ -47,24 +44,20 @@ h2 {
   margin-bottom: 10px;
 }
 
-#logo{
-  width:1350px;
-  height:500px;
-}
 
 
-@media only screen and (max-device-width:550px){
-  #logo{
-  width: 320px;
-  height:400px;
+
+
+@media only screen and (max-device-width:390px){
+  #bar{
+    position: -webkit-sticky;
+    position: sticky;
+    width:100%;
+    max-width:77%;
+    background-color:white;
+
   }
-}
 
-@media only screen and (min-device-width:600px) and(max-device-width:1000px){
-  #logo{
-  width: 960px;
-  height:400px;
-  }
 }
 
 .grad-bar {
