@@ -13,7 +13,7 @@
         <link rel="apple-touch-icon" sizes="180x180"  type="image/jpg" href="favicon.jpg">
         <link rel="shortcut icon" type="image/jpg" href="favicon.jpg">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap">
-    <meta name="Description" content="Life Science Learning by Chandra - Video Portal">
+    <meta name="Description" content="Upasyo's Personal Website Made with Proud in India">
  </script>
 
    <meta name="Copyright" content="Copyright (c) 2021 PERSONAL@Upasyo's SITE. All Rights Reserved">
@@ -24,21 +24,23 @@
     <link rel="preconnect" href="//apis.google.com" crossorigin>
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin>
     <meta name="theme-color" content="#ff9900"/>
+    <base target="_blank" />
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="aos.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-	
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger
-    intent="WELCOME"
-    chat-title="Mike"
-    agent-id="b8d994fe-dd38-40d5-9452-ab2312d8b575"
-    language-code="en"
-  ></df-messenger>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TZT5XJ9');</script>
+  <!-- End Google Tag Manager -->
+
 <script>
      document.onkeypress = function (event) {
 event = (event || window.event);
@@ -74,7 +76,27 @@ return false;
 });
 });
 </script>
-           
+<script>
+  var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+  if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+  function mischandler(){
+  return false;
+  }
+  function mousehandler(e){
+  var myevent = (isNS) ? e : event;
+  var eventbutton = (isNS) ? myevent.which : myevent.button;
+  if((eventbutton==2)||(eventbutton==3)) return false;
+  }
+  document.oncontextmenu = mischandler;
+  document.onmousedown = mousehandler;
+  document.onmouseup = mousehandler;
+
+  $(document).ready(function() {
+  $('body').on('mousedown', function(e) {
+      e.preventDefault();
+  });
+});
+  </script>     
 
 <script>
   /*function check(e)
@@ -91,14 +113,19 @@ return false;
   </head>
   <body background="https://entertainment-rick.coffeecup.com/background.jpg" onload="checkCookie()">
 
-   
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZT5XJ9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
     <div class="grad-bar"></div>
+    <div class="origin">
     <div id="bar">
   
-   
+        <div class="mobilelogo">
          <img class="image" src="new.PNG">
         </div>
+      </div>
     </div>
       
         
@@ -145,9 +172,314 @@ return false;
   </div>
 
   <img id="logo" src="https://i.postimg.cc/1tMDPg70/DMDIKcy-Ws-AEs-KDj.jpg" alt="background" >
- 
-<div id="marque"></div>
   <script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("bar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
+    
+    <div id="ok"></div>
+    <style>#ok {
+      position: absolute;
+      top: 50%; 
+      right: 50%;
+      transform: translate(50%,-50%);
+      text-transform: uppercase;
+      font-family: verdana;
+      font-size: 3em;
+      font-weight: 700;
+      color: #f5f5f5;
+      text-shadow: 1px 1px 1px #53ee93,
+          1px 2px 1px #e3ff80,
+          1px 3px 1px #919191,
+          1px 4px 1px #ccff16,
+          1px 5px 1px #919191,
+          1px 6px 1px #919191,
+          1px 7px 1px #919191,
+          1px 8px 1px #919191,
+          1px 9px 1px #919191,
+          1px 10px 1px #919191,
+      1px 18px 6px rgba(16,16,16,0.4),
+      1px 22px 10px rgba(16,16,16,0.2),
+      1px 25px 35px rgba(16,16,16,0.2),
+      1px 30px 60px rgba(16,16,16,0.4);
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+  }</style>
+  
+  
+  
+   
+  <script>
+     'use strict';
+  
+  // If set to true, the user must press
+  // UP UP DOWN ODWN LEFT RIGHT LEFT RIGHT A B
+  // to trigger the confetti with a random color theme.
+  // Otherwise the confetti constantly falls.
+  var onlyOnKonami = false;
+  
+  $(function() {
+    // Globals
+    var $window = $(window)
+      , random = Math.random
+      , cos = Math.cos
+      , sin = Math.sin
+      , PI = Math.PI
+      , PI2 = PI * 2
+      , timer = undefined
+      , frame = undefined
+      , confetti = [];
+    
+    var runFor = 15000;
+    var isRunning = true;
+    
+    setTimeout(() => {
+        isRunning = false;
+    }, runFor);
+  
+    // Settings
+    var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+      , pointer = 0;
+  
+    var particles = 150
+      , spread = 90
+      , sizeMin = 5
+      , sizeMax = 12 - sizeMin
+      , eccentricity = 15
+      , deviation = 100
+      , dxThetaMin = -.1
+      , dxThetaMax = -dxThetaMin - dxThetaMin
+      , dyMin = .15
+      , dyMax = .18
+      , dThetaMin = .4
+      , dThetaMax = .7 - dThetaMin;
+  
+    var colorThemes = [
+      function() {
+        return color(200 * random()|0, 200 * random()|0, 200 * random()|0);
+      }, function() {
+        var black = 200 * random()|0; return color(200, black, black);
+      }, function() {
+        var black = 200 * random()|0; return color(black, 200, black);
+      }, function() {
+        var black = 200 * random()|0; return color(black, black, 200);
+      }, function() {
+        return color(200, 100, 200 * random()|0);
+      }, function() {
+        return color(200 * random()|0, 200, 200);
+      }, function() {
+        var black = 256 * random()|0; return color(black, black, black);
+      }, function() {
+        return colorThemes[random() < .5 ? 1 : 2]();
+      }, function() {
+        return colorThemes[random() < .5 ? 3 : 5]();
+      }, function() {
+        return colorThemes[random() < .5 ? 2 : 4]();
+      }
+    ];
+    function color(r, g, b) {
+      return 'rgb(' + r + ',' + g + ',' + b + ')';
+    }
+  
+    // Cosine interpolation
+    function interpolation(a, b, t) {
+      return (1-cos(PI*t))/2 * (b-a) + a;
+    }
+  
+    // Create a 1D Maximal Poisson Disc over [0, 1]
+    var radius = 1/eccentricity, radius2 = radius+radius;
+    function createPoisson() {
+      // domain is the set of points which are still available to pick from
+      // D = union{ [d_i, d_i+1] | i is even }
+      var domain = [radius, 1-radius], measure = 1-radius2, spline = [0, 1];
+      while (measure) {
+        var dart = measure * random(), i, l, interval, a, b, c, d;
+  
+        // Find where dart lies
+        for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+          a = domain[i], b = domain[i+1], interval = b-a;
+          if (dart < measure+interval) {
+            spline.push(dart += a-measure);
+            break;
+          }
+          measure += interval;
+        }
+        c = dart-radius, d = dart+radius;
+  
+        // Update the domain
+        for (i = domain.length-1; i > 0; i -= 2) {
+          l = i-1, a = domain[l], b = domain[i];
+          // c---d          c---d  Do nothing
+          //   c-----d  c-----d    Move interior
+          //   c--------------d    Delete interval
+          //         c--d          Split interval
+          //       a------b
+          if (a >= c && a < d)
+            if (b > d) domain[l] = d; // Move interior (Left case)
+            else domain.splice(l, 2); // Delete interval
+          else if (a < c && b > c)
+            if (b <= d) domain[i] = c; // Move interior (Right case)
+            else domain.splice(i, 0, c, d); // Split interval
+        }
+  
+        // Re-measure the domain
+        for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
+          measure += domain[i+1]-domain[i];
+      }
+  
+      return spline.sort();
+    }
+  
+    // Create the overarching container
+    var container = document.createElement('div');
+    container.style.position = 'fixed';
+    container.style.top      = '0';
+    container.style.left     = '0';
+    container.style.width    = '100%';
+    container.style.height   = '0';
+    container.style.overflow = 'visible';
+    container.style.zIndex   = '9999';
+  
+    // Confetto constructor
+    function Confetto(theme) {
+      this.frame = 0;
+      this.outer = document.createElement('div');
+      this.inner = document.createElement('div');
+      this.outer.appendChild(this.inner);
+  
+      var outerStyle = this.outer.style, innerStyle = this.inner.style;
+      outerStyle.position = 'absolute';
+      outerStyle.width  = (sizeMin + sizeMax * random()) + 'px';
+      outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
+      innerStyle.width  = '100%';
+      innerStyle.height = '100%';
+      innerStyle.backgroundColor = theme();
+  
+      outerStyle.perspective = '50px';
+      outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
+      this.axis = 'rotate3D(' +
+        cos(360 * random()) + ',' +
+        cos(360 * random()) + ',0,';
+      this.theta = 360 * random();
+      this.dTheta = dThetaMin + dThetaMax * random();
+      innerStyle.transform = this.axis + this.theta + 'deg)';
+  
+      this.x = $window.width() * random();
+      this.y = -deviation;
+      this.dx = sin(dxThetaMin + dxThetaMax * random());
+      this.dy = dyMin + dyMax * random();
+      outerStyle.left = this.x + 'px';
+      outerStyle.top  = this.y + 'px';
+  
+      // Create the periodic spline
+      this.splineX = createPoisson();
+      this.splineY = [];
+      for (var i = 1, l = this.splineX.length-1; i < l; ++i)
+        this.splineY[i] = deviation * random();
+      this.splineY[0] = this.splineY[l] = deviation * random();
+  
+      this.update = function(height, delta) {
+        this.frame += delta;
+        this.x += this.dx * delta;
+        this.y += this.dy * delta;
+        this.theta += this.dTheta * delta;
+  
+        // Compute spline and convert to polar
+        var phi = this.frame % 7777 / 7777, i = 0, j = 1;
+        while (phi >= this.splineX[j]) i = j++;
+        var rho = interpolation(
+          this.splineY[i],
+          this.splineY[j],
+          (phi-this.splineX[i]) / (this.splineX[j]-this.splineX[i])
+        );
+        phi *= PI2;
+  
+        outerStyle.left = this.x + rho * cos(phi) + 'px';
+        outerStyle.top  = this.y + rho * sin(phi) + 'px';
+        innerStyle.transform = this.axis + this.theta + 'deg)';
+        return this.y > height+deviation;
+      };
+    }
+       
+      
+    function poof() {
+      if (!frame) {
+        // Append the container
+        document.body.appendChild(container);
+  
+        // Add confetti
+        
+        var theme = colorThemes[onlyOnKonami ? colorThemes.length * random()|0 : 0]
+          , count = 0;
+          
+        (function addConfetto() {
+    
+          if (onlyOnKonami && ++count > particles)
+            return timer = undefined;
+          
+          if (isRunning) {
+            var confetto = new Confetto(theme);
+            confetti.push(confetto);
+           
+            container.appendChild(confetto.outer);
+            timer = setTimeout(addConfetto, spread * random());
+            $(".rapid").hide();
+           }else{
+          
+              $("#ok").hide();
+              $(".rapid").show();
+  }
+        })(0);
+          
+  
+        // Start the loop
+        var prev = undefined;
+        requestAnimationFrame(function loop(timestamp) {
+          var delta = prev ? timestamp - prev : 0;
+          prev = timestamp;
+          var height = $window.height();
+  
+          for (var i = confetti.length-1; i >= 0; --i) {
+            if (confetti[i].update(height, delta)) {
+              container.removeChild(confetti[i].outer);
+              confetti.splice(i, 1);
+            }
+          }
+  
+          if (timer || confetti.length)
+            return frame = requestAnimationFrame(loop);
+  
+          // Cleanup
+          document.body.removeChild(container);
+          frame = undefined;
+        });
+      }
+    }
+      
+    $window.keydown(function(event) {
+      pointer = konami[pointer] === event.which
+        ? pointer+1
+        : +(event.which === konami[0]);
+      if (pointer === konami.length) {
+        pointer = 0;
+        poof();
+      }
+    });
+    
+    if (!onlyOnKonami) poof();
+  });
+  
     function setCookie(cname,cvalue,exdays) {
       var d = new Date();
       d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -156,7 +488,7 @@ return false;
     }
     
     function getCookie(cname) {
-      var name = cname + "=";
+      var name = cname +"=" ;
       var decodedCookie = decodeURIComponent(document.cookie);
       var ca = decodedCookie.split(';');
       for(var i = 0; i < ca.length; i++) {
@@ -173,49 +505,42 @@ return false;
     
     function checkCookie() {
       var user=getCookie("username");
+      
       if (user != "") {
-        $('#marque').html('<marquee behavior="scroll" direction="left"  onmouseout="this.start();" onmouseover="this.stop();"  scrollamount="7"><strong> <span style="color:#FF0000;"><b>Welcome '+user + ' To Upasyos Personal Site</b></span> </strong></marquee>');
+        $("#ok").html('<center>welcome<br>'+user+'</center>');
+        
+        $("#ok").show();
+
       } else {
-         user = prompt("Please enter your Name:","");
+        user = prompt("Please enter your Name: Write Your First Name Only.","");
+       $(".rapid").show();
+       $("#ok").html('welcome');
+     
+        if(user ===""){
+          $("#ok").html('welcome');
+          
+        }else{
+  
+        }
          if (user != "" && user != null) {
            setCookie("username", user, 30);
-           location.reload(-1);
+           $("#ok").hide();
+           $("#ok").html('welcome<br>'+user+'');
+           window.location.reload();
+         
          }
       }
     }
+  
+   
     </script>
+  
+  
 
-  <div class="js-scroll-counter scroll-counter"></div>
-  <script>
-    document.querySelector('html').classList.remove('no-js');
-    if (!window.Cypress) {
-      const scrollCounter = document.querySelector('.js-scroll-counter');
 
-      AOS.init({
-        mirror: true
-      });
 
-      document.addEventListener('aos:in', function(e) {
-        console.log('in!', e.detail);
-      });
 
-      window.addEventListener('scroll', function() {
-        scrollCounter.innerHTML = window.pageYOffset;
-      });
-    }
-  </script>
 
-<style>
-  .scroll-counter {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 15px;
-  color: white;
-  background-color: rgba(0,0,0,0.4);
-}
-
-</style>
 <style>
     @media only screen and(max-device-width:590px){
 #logo{
@@ -236,7 +561,7 @@ return false;
 
   </style>
 
-    <div class="container" >
+    <div class="rapid" >
       <p>Upasyo is a<span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
     </div>
  
@@ -245,7 +570,7 @@ return false;
 <script src="type.js"></script>
 
 <style>
-  .container {
+  .rapid {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -258,7 +583,7 @@ return false;
 }
 
 
-.container p {
+.rapid p {
   font-size: 2rem;
   padding: 0.5rem;
   font-weight: bold;
@@ -267,18 +592,18 @@ return false;
   overflow: hidden;
 }
 
-.container p span.typed-text {
+.rapid p span.typed-text {
   font-weight: normal;
   color: #dd7732;
 }
-.container p span.cursor {
+.rapid p span.cursor {
   display: inline-block;
   background-color: #ccc;
   margin-left: 0.1rem;
   width: 3px;
   animation: blink 1s infinite;
 }
-.container p span.cursor.typing {
+.rapid p span.cursor.typing {
   animation: none;
 }
 @keyframes blink {
@@ -308,7 +633,7 @@ return false;
 @media only screen and (max-device-width:630px){
 .image{
   position:relative;
-  left:42%;
+  left:35%;
 }
 
 }
@@ -356,21 +681,7 @@ return false;
 }
 
   </style>
-  
-  <script>
-    window.onscroll = function() {myFunction()};
-    
-    var navbar = document.getElementById("bar");
-    var sticky = navbar.offsetTop;
-    
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-    </script>
-    
-   
+
+
+
     </body>
