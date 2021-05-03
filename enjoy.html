@@ -462,9 +462,16 @@ function checkCookie() {
    
     </script>
        <script>
-        setTimeout(function(){
+if(document.hidden){ 
+	setTimeout(function(){
+           window.location.href = 'index.html';
+        }, 1000);
+}else {
+	setTimeout(function(){
            window.location.href = 'index.html';
         }, 10000);
+}
+        
      </script>
     
     <div id="ok"></div>
