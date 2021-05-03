@@ -26,7 +26,6 @@
     <meta name="theme-color" content="#ff9900"/>
     <base target="_blank" />
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="aos.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,27 +75,7 @@ return false;
 });
 });
 </script>
-<script>
-  var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-  if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-  function mischandler(){
-  return false;
-  }
-  function mousehandler(e){
-  var myevent = (isNS) ? e : event;
-  var eventbutton = (isNS) ? myevent.which : myevent.button;
-  if((eventbutton==2)||(eventbutton==3)) return false;
-  }
-  document.oncontextmenu = mischandler;
-  document.onmousedown = mousehandler;
-  document.onmouseup = mousehandler;
-
-  $(document).ready(function() {
-  $('body').on('mousedown', function(e) {
-      e.preventDefault();
-  });
-});
-  </script>     
+   
 
 <script>
   /*function check(e)
@@ -111,7 +90,7 @@ return false;
   };
   </script>
   </head>
-  <body background="https://entertainment-rick.coffeecup.com/background.jpg" onload="checkCookie()">
+  <body background="https://entertainment-rick.coffeecup.com/background.jpg">
 
    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZT5XJ9"
@@ -131,7 +110,7 @@ return false;
         
 <div class="intro">
 
-  <div class="pie pie1" onclick="parent.location='http://127.0.0.1:5500/index.html'">
+  <div class="pie pie1" onclick="location.reload();">
     <div class="pie-color pie-color1">
       <svg class="card" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
         <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
@@ -187,354 +166,9 @@ return false;
     }
     </script>
     
-    <div id="ok"></div>
-    <style>#ok {
-      position: absolute;
-      top: 50%; 
-      right: 50%;
-      transform: translate(50%,-50%);
-      text-transform: uppercase;
-      font-family: verdana;
-      font-size: 3em;
-      font-weight: 700;
-      color: #f5f5f5;
-      text-shadow: 1px 1px 1px #53ee93,
-          1px 2px 1px #e3ff80,
-          1px 3px 1px #919191,
-          1px 4px 1px #ccff16,
-          1px 5px 1px #919191,
-          1px 6px 1px #919191,
-          1px 7px 1px #919191,
-          1px 8px 1px #919191,
-          1px 9px 1px #919191,
-          1px 10px 1px #919191,
-      1px 18px 6px rgba(16,16,16,0.4),
-      1px 22px 10px rgba(16,16,16,0.2),
-      1px 25px 35px rgba(16,16,16,0.2),
-      1px 30px 60px rgba(16,16,16,0.4);
-      user-select: none;
-      -webkit-user-select: none;
-      -webkit-user-drag: none;
-  }</style>
-  
-  
-  
-   
-  <script>
-     'use strict';
-  
-  // If set to true, the user must press
-  // UP UP DOWN ODWN LEFT RIGHT LEFT RIGHT A B
-  // to trigger the confetti with a random color theme.
-  // Otherwise the confetti constantly falls.
-  var onlyOnKonami = false;
-  
-  $(function() {
-    // Globals
-    var $window = $(window)
-      , random = Math.random
-      , cos = Math.cos
-      , sin = Math.sin
-      , PI = Math.PI
-      , PI2 = PI * 2
-      , timer = undefined
-      , frame = undefined
-      , confetti = [];
     
-    var runFor = 15000;
-    var isRunning = true;
-    
-    setTimeout(() => {
-        isRunning = false;
-    }, runFor);
   
-    // Settings
-    var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
-      , pointer = 0;
-  
-    var particles = 150
-      , spread = 90
-      , sizeMin = 5
-      , sizeMax = 12 - sizeMin
-      , eccentricity = 15
-      , deviation = 100
-      , dxThetaMin = -.1
-      , dxThetaMax = -dxThetaMin - dxThetaMin
-      , dyMin = .15
-      , dyMax = .18
-      , dThetaMin = .4
-      , dThetaMax = .7 - dThetaMin;
-  
-    var colorThemes = [
-      function() {
-        return color(200 * random()|0, 200 * random()|0, 200 * random()|0);
-      }, function() {
-        var black = 200 * random()|0; return color(200, black, black);
-      }, function() {
-        var black = 200 * random()|0; return color(black, 200, black);
-      }, function() {
-        var black = 200 * random()|0; return color(black, black, 200);
-      }, function() {
-        return color(200, 100, 200 * random()|0);
-      }, function() {
-        return color(200 * random()|0, 200, 200);
-      }, function() {
-        var black = 256 * random()|0; return color(black, black, black);
-      }, function() {
-        return colorThemes[random() < .5 ? 1 : 2]();
-      }, function() {
-        return colorThemes[random() < .5 ? 3 : 5]();
-      }, function() {
-        return colorThemes[random() < .5 ? 2 : 4]();
-      }
-    ];
-    function color(r, g, b) {
-      return 'rgb(' + r + ',' + g + ',' + b + ')';
-    }
-  
-    // Cosine interpolation
-    function interpolation(a, b, t) {
-      return (1-cos(PI*t))/2 * (b-a) + a;
-    }
-  
-    // Create a 1D Maximal Poisson Disc over [0, 1]
-    var radius = 1/eccentricity, radius2 = radius+radius;
-    function createPoisson() {
-      // domain is the set of points which are still available to pick from
-      // D = union{ [d_i, d_i+1] | i is even }
-      var domain = [radius, 1-radius], measure = 1-radius2, spline = [0, 1];
-      while (measure) {
-        var dart = measure * random(), i, l, interval, a, b, c, d;
-  
-        // Find where dart lies
-        for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
-          a = domain[i], b = domain[i+1], interval = b-a;
-          if (dart < measure+interval) {
-            spline.push(dart += a-measure);
-            break;
-          }
-          measure += interval;
-        }
-        c = dart-radius, d = dart+radius;
-  
-        // Update the domain
-        for (i = domain.length-1; i > 0; i -= 2) {
-          l = i-1, a = domain[l], b = domain[i];
-          // c---d          c---d  Do nothing
-          //   c-----d  c-----d    Move interior
-          //   c--------------d    Delete interval
-          //         c--d          Split interval
-          //       a------b
-          if (a >= c && a < d)
-            if (b > d) domain[l] = d; // Move interior (Left case)
-            else domain.splice(l, 2); // Delete interval
-          else if (a < c && b > c)
-            if (b <= d) domain[i] = c; // Move interior (Right case)
-            else domain.splice(i, 0, c, d); // Split interval
-        }
-  
-        // Re-measure the domain
-        for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
-          measure += domain[i+1]-domain[i];
-      }
-  
-      return spline.sort();
-    }
-  
-    // Create the overarching container
-    var container = document.createElement('div');
-    container.style.position = 'fixed';
-    container.style.top      = '0';
-    container.style.left     = '0';
-    container.style.width    = '100%';
-    container.style.height   = '0';
-    container.style.overflow = 'visible';
-    container.style.zIndex   = '9999';
-  
-    // Confetto constructor
-    function Confetto(theme) {
-      this.frame = 0;
-      this.outer = document.createElement('div');
-      this.inner = document.createElement('div');
-      this.outer.appendChild(this.inner);
-  
-      var outerStyle = this.outer.style, innerStyle = this.inner.style;
-      outerStyle.position = 'absolute';
-      outerStyle.width  = (sizeMin + sizeMax * random()) + 'px';
-      outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
-      innerStyle.width  = '100%';
-      innerStyle.height = '100%';
-      innerStyle.backgroundColor = theme();
-  
-      outerStyle.perspective = '50px';
-      outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
-      this.axis = 'rotate3D(' +
-        cos(360 * random()) + ',' +
-        cos(360 * random()) + ',0,';
-      this.theta = 360 * random();
-      this.dTheta = dThetaMin + dThetaMax * random();
-      innerStyle.transform = this.axis + this.theta + 'deg)';
-  
-      this.x = $window.width() * random();
-      this.y = -deviation;
-      this.dx = sin(dxThetaMin + dxThetaMax * random());
-      this.dy = dyMin + dyMax * random();
-      outerStyle.left = this.x + 'px';
-      outerStyle.top  = this.y + 'px';
-  
-      // Create the periodic spline
-      this.splineX = createPoisson();
-      this.splineY = [];
-      for (var i = 1, l = this.splineX.length-1; i < l; ++i)
-        this.splineY[i] = deviation * random();
-      this.splineY[0] = this.splineY[l] = deviation * random();
-  
-      this.update = function(height, delta) {
-        this.frame += delta;
-        this.x += this.dx * delta;
-        this.y += this.dy * delta;
-        this.theta += this.dTheta * delta;
-  
-        // Compute spline and convert to polar
-        var phi = this.frame % 7777 / 7777, i = 0, j = 1;
-        while (phi >= this.splineX[j]) i = j++;
-        var rho = interpolation(
-          this.splineY[i],
-          this.splineY[j],
-          (phi-this.splineX[i]) / (this.splineX[j]-this.splineX[i])
-        );
-        phi *= PI2;
-  
-        outerStyle.left = this.x + rho * cos(phi) + 'px';
-        outerStyle.top  = this.y + rho * sin(phi) + 'px';
-        innerStyle.transform = this.axis + this.theta + 'deg)';
-        return this.y > height+deviation;
-      };
-    }
-       
-      
-    function poof() {
-      if (!frame) {
-        // Append the container
-        document.body.appendChild(container);
-  
-        // Add confetti
-        
-        var theme = colorThemes[onlyOnKonami ? colorThemes.length * random()|0 : 0]
-          , count = 0;
-          
-        (function addConfetto() {
-    
-          if (onlyOnKonami && ++count > particles)
-            return timer = undefined;
-          
-          if (isRunning) {
-            var confetto = new Confetto(theme);
-            confetti.push(confetto);
-           
-            container.appendChild(confetto.outer);
-            timer = setTimeout(addConfetto, spread * random());
-            $(".rapid").hide();
-           }else{
-          
-              $("#ok").hide();
-              $(".rapid").show();
-  }
-        })(0);
-          
-  
-        // Start the loop
-        var prev = undefined;
-        requestAnimationFrame(function loop(timestamp) {
-          var delta = prev ? timestamp - prev : 0;
-          prev = timestamp;
-          var height = $window.height();
-  
-          for (var i = confetti.length-1; i >= 0; --i) {
-            if (confetti[i].update(height, delta)) {
-              container.removeChild(confetti[i].outer);
-              confetti.splice(i, 1);
-            }
-          }
-  
-          if (timer || confetti.length)
-            return frame = requestAnimationFrame(loop);
-  
-          // Cleanup
-          document.body.removeChild(container);
-          frame = undefined;
-        });
-      }
-    }
-      
-    $window.keydown(function(event) {
-      pointer = konami[pointer] === event.which
-        ? pointer+1
-        : +(event.which === konami[0]);
-      if (pointer === konami.length) {
-        pointer = 0;
-        poof();
-      }
-    });
-    
-    if (!onlyOnKonami) poof();
-  });
-  
-    function setCookie(cname,cvalue,exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays*24*60*60*1000));
-      var expires = "expires=" + d.toGMTString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-    
-    function getCookie(cname) {
-      var name = cname +"=" ;
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-      for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-    
-    function checkCookie() {
-      var user=getCookie("username");
-      
-      if (user != "") {
-        $("#ok").html('<center>welcome<br>'+user+'</center>');
-        
-        $("#ok").show();
-
-      } else {
-        user = prompt("Please enter your Name: Write Your First Name Only.","");
-       $(".rapid").show();
-       $("#ok").html('welcome');
-     
-        if(user ===""){
-          $("#ok").html('welcome');
-          
-        }else{
-  
-        }
-         if (user != "" && user != null) {
-           setCookie("username", user, 30);
-           $("#ok").hide();
-           $("#ok").html('welcome<br>'+user+'');
-           window.location.reload();
-         
-         }
-      }
-    }
-  
-   
-    </script>
-  
+   <div id="new"></div>
   
 
 
@@ -681,6 +315,206 @@ return false;
 }
 
   </style>
+
+
+<div class="myself" style="width: 18rem; text-align:center">
+
+  <img class="profile" src="https://i.postimg.cc/pVmkkLHV/UPASYO-S-PROFILE-IMAGE.jpg" class="card-img-top" alt="...">
+
+  <div class="card-body">
+    <h5 class="card-title"><i><b>Upasyo Kushari</b></i></h5>
+    <div class="card-text"><p><b><div class="txt" style="color:black; font-size:18px;">Upasyo is a coder and will one day become an Artist</b></p>
+    <div class="inner-text">
+    
+    <h><b><i>Developer & Founder of Site<i></b></h>
+    </div>
+    </div>
+  
+  </div>
+   <button class="follow"><b>Follow Upasyo on WEB</b></button>
+</div>
+
+<script>
+$(".follow").click(function(){
+$(".follow").html('<b>Thanks for Following   </b><svg fill="lightgreen" xmlns="http://www.w3.org/2000/svg" width="30" height="22"><path d="M23.334 11.96c-.713-.726-.872-1.829-.393-2.727.342-.64.366-1.401.064-2.062-.301-.66-.893-1.142-1.601-1.302-.991-.225-1.722-1.067-1.803-2.081-.059-.723-.451-1.378-1.062-1.77-.609-.393-1.367-.478-2.05-.229-.956.347-2.026.032-2.642-.776-.44-.576-1.124-.915-1.85-.915-.725 0-1.409.339-1.849.915-.613.809-1.683 1.124-2.639.777-.682-.248-1.44-.163-2.05.229-.61.392-1.003 1.047-1.061 1.77-.082 1.014-.812 1.857-1.803 2.081-.708.16-1.3.642-1.601 1.302s-.277 1.422.065 2.061c.479.897.32 2.001-.392 2.727-.509.517-.747 1.242-.644 1.96s.536 1.347 1.17 1.7c.888.495 1.352 1.51 1.144 2.505-.147.71.044 1.448.519 1.996.476.549 1.18.844 1.902.798 1.016-.063 1.953.54 2.317 1.489.259.678.82 1.195 1.517 1.399.695.204 1.447.072 2.031-.357.819-.603 1.936-.603 2.754 0 .584.43 1.336.562 2.031.357.697-.204 1.258-.722 1.518-1.399.363-.949 1.301-1.553 2.316-1.489.724.046 1.427-.249 1.902-.798.475-.548.667-1.286.519-1.996-.207-.995.256-2.01 1.145-2.505.633-.354 1.065-.982 1.169-1.7s-.135-1.443-.643-1.96zm-12.584 5.43l-4.5-4.364 1.857-1.857 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.642z"/></svg>');
+$(".follow").css("outline","0");
+});
+
+
+</script>
+<style>
+h{
+color:blue;
+font-size:18px;
+}
+
+.follow {
+        outline: 0%;
+        font-weight: 600;
+        border: none;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+         overflow: hidden;
+        background: linear-gradient(-55deg, #EE7752, #E73C7E, #23A6D5, #23D5AB,#b7e13f,#7e84f9,#bfff00, #00ffbf);
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+         background-size: 400% 400%;
+        animation: TransitioningBackground 10s ease infinite;
+        transition: 0.6s;
+        border-radius:5rem;
+      }
+      .follow::before{
+          content: '';
+          display: block;
+          position: absolute;
+          outline: 0;
+        font-weight: 600;
+        border: none;
+          outline:0;
+          width: 60px;
+          height: 100%;
+          top: 0;
+          filter: blur(30px);
+          transform: translateX(-100px) skewX(-15deg);
+      
+      
+      }
+      .follow::after{
+        outline: 0;
+        font-weight: 600;
+        border: none;
+          content: '';
+          display: block;
+          position: absolute;
+         outline:0;
+          width: 30px;
+          height: 100%;
+          top: 0;
+          filter: blur(5px);
+          transform: translateX(-100px) skewX(-15deg);
+      
+      
+      }
+        .follow:hover {
+          outline: 0%;
+        font-weight: 600;
+        border: none;
+          background-image: (linear-gradient(to left, #2d8fe5, #d155b8));
+          cursor: pointer;
+          outline:0;
+          }
+        
+          .follow::before,
+          .follow::after {
+            transform: translateX(300px) skewX(-15deg);
+            transition: 0.7s;
+            outline: 0%;
+        font-weight: 600;
+        border: none;
+        outline:0;
+          }
+ @keyframes TransitioningBackground {
+        0% {
+          background-position: 1% 0%;
+        }
+        50% {
+          background-position: 99% 100%;
+        }
+        100% {
+          background-position: 1% 0%;
+        }
+      }
+        .myself {
+      
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 350px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        outline:0;
+        background:rgb(197, 252, 240);
+        user-select:none;
+        height:540px;
+        margin-left:10%;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        -webkit-user-drag: none;
+        transition: 1s;
+      }
+      @media only screen and (max-device-width:720px){
+      .myself{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);   
+        max-width: 300px;
+        margin: auto;
+        height:500px;
+        text-align: center;
+        font-family: arial;
+        float:center;
+        user-select:none;
+        transition: 1s;
+        outline:0;
+      
+      
+      }
+      }
+      
+      .myself:hover{
+      box-shadow: 0 15px 90px 0 rgba(255, 0, 255, 0.2);
+      transition:1s;
+      
+      }
+       .profile{
+       width:320px;
+       height:300px;
+      border-radius:90px;
+      transition: 1.2s;
+      outline:0;
+      
+      }
+      .profile:hover{
+      
+      border-radius:120px;
+      transition:1s;
+      outline:0;
+      }
+      @media only screen and (max-device-width:720px){
+        .profile{
+       width:300px;
+       height:270px;
+      border-radius:90px;
+      transition: 1.2s;
+      outline:0;
+      
+      }
+      .profile:hover{
+      
+      border-radius:120px;
+      transition:1s;
+      outline:0;
+      }
+      }
+</style>
+
+
+
+<script>
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation is not Supported in your Browser Please try to Enable it to Avial many Features on Web")
+    }
+  }
+  
+  function showPosition(position) {
+    console.log( "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude);
+  }
+  </script>
 
 
 
