@@ -222,7 +222,6 @@ return false;
     
     function stop(){
     DeactivateConfetti();
-    
     }
         function confettiParticle(color) {
             this.x = Math.random() * W; // x-coordinate
@@ -382,6 +381,9 @@ return false;
             confettiActive = false;
             ClearTimers();
             $('#ok').hide();
+            setTimeout(function(){
+           window.location.href = 'index.html';
+        }, 1000);
         }
     
         function StopConfetti() {
@@ -440,7 +442,7 @@ function checkCookie() {
   var user=getCookie("username");
   if (user != "") {
     $("#ok").html("<center>Welcome<br>"+user+"</center>");
-   
+
   } else {
   
     stop();
