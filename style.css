@@ -4,9 +4,9 @@ body{
 	font-family: 'Roboto', sans-serif;
   margin:0;
   padding:0;
-  
-  overflow-x: -moz-hidden-unscrollable;
   overflow-x:hidden;
+  overflow-x: -moz-hidden-unscrollable;
+  
 }
 *{
 
@@ -24,7 +24,7 @@ img{
 
       #bar{
         position: -webkit-sticky;
-        position: sticky;
+        position: sticky;; 
         width:100%;
         background-color:white;
       }
