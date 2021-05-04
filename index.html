@@ -360,7 +360,7 @@ font-size:18px;
         text-align: center;
         cursor: pointer;
         width: 100%;
-        font-size: 18px;
+        font-size: 15px;
          background-size: 400% 400%;
         animation: TransitioningBackground 10s ease infinite;
         transition: 0.6s;
@@ -402,20 +402,12 @@ font-size:18px;
           outline: 0%;
         font-weight: 600;
         border: none;
-          background-image: (linear-gradient(to left, #2d8fe5, #d155b8));
+          background-image: (linear-gradient(to left, #f8eb35, rgb(10, 252, 1)));
           cursor: pointer;
           outline:0;
           }
         
-          .follow::before,
-          .follow::after {
-            transform: translateX(300px) skewX(-15deg);
-            transition: 0.7s;
-            outline: 0%;
-        font-weight: 600;
-        border: none;
-        outline:0;
-          }
+        
  @keyframes TransitioningBackground {
         0% {
           background-position: 1% 0%;
@@ -482,16 +474,16 @@ font-size:18px;
       }
       @media only screen and (max-device-width:720px){
         .profile{
-       width:300px;
-       height:270px;
-      border-radius:90px;
+       width:250px;
+       height:250px;
+      border-radius:150px;
       transition: 1.2s;
       outline:0;
       
       }
       .profile:hover{
       
-      border-radius:120px;
+      background:rgb(197, 252, 240);
       transition:1s;
       outline:0;
       }
