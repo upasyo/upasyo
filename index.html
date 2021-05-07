@@ -10,8 +10,6 @@
         <html lang="en-US" itemscope itemtype="http://schema.org/WebPage">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <link rel="apple-touch-icon" sizes="180x180"  type="image/jpg" href="favicon.jpg">
-        <link rel="shortcut icon" type="image/jpg" href="favicon.jpg">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap">
     <meta name="Description" content="Upasyo's Personal Website Made with Proud in India">
  </script>
@@ -315,7 +313,8 @@ return false;
 }
 
   </style>
-
+  
+<div id="let">
 <div id="profie">
 <div class="myself" style="width: 18rem; text-align:center">
 
@@ -389,7 +388,7 @@ font-size:18px;
         }
       }
         .myself {
-      
+        display:inline-block;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         width: 350px;
         margin: auto;
@@ -407,6 +406,7 @@ font-size:18px;
       }
       @media only screen and (max-device-width:720px){
       .myself{
+        display:block;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);   
         max-width: 300px;
         margin: auto;
@@ -459,7 +459,69 @@ font-size:18px;
       }
 </style>
 
+
 </div>
+
+<div class="profile-text">
+  <div class="wrapper" >
+    <h2 id="na"style="font-size:70px;"><b>Upasyo is a <br>Professional Coder</b></h2>
+  </div>
+  </div>
+<style>
+
+#na {
+		color: #fff;
+		font-family: "ubuntu";
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#095fab 10%, #25abe8 20%, #57d75b 60%,	#ADFF2F 60%,	#ADFF2F 10%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	}
+
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+
+
+  .profile-text {
+  display:inline-block;
+  position:absolute;
+  padding-left:100px;
+  padding-top:10%;
+    
+}
+     
+</style>
+</div>
+
+<style>
+  .let{
+    display: flex;
+  justify-content: space-between;
+  }
+  @media only screen and (max-device-width:720px){
+    .profile-text {
+  display:none;
+    
+}
+  }
+
+
+
+</style>
 <script>
 
   function getLocation() {
