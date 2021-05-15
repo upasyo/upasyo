@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
+html {
+  scroll-behavior: smooth;
+}
 body{
 	font-family: 'Roboto', sans-serif;
   margin:0;
   padding:0;
+  font-weight: bold;
   overflow-x:hidden;
   overflow-x: -moz-hidden-unscrollable;
   
+}
+body[data-aos-duration='4000'] [data-aos], [data-aos][data-aos][data-aos-duration='4000']{
+  transition-duration: 9000ms;
 }
 *{
 
@@ -40,6 +46,7 @@ scrollbar {
 background: grey; 
  
 }
+
 
 img{
   -webkit-user-select: none; /* Safari */
@@ -92,7 +99,94 @@ img{
 
        
       
-     
+       .count{
+        width: 100%;
+        max-width: 1500px;
+        padding: 0 15px;
+        border-radius:15px;
+        height:120px;
+        box-sizing: border-box;
+        margin: auto;
+        font-family: 'Bebas Neue', cursive;
+      
+        background:url("https://appconsole.coffeecup.com/Images/counts-bg.png") center center no-repeat;
+        padding: 80px 0 60px 0;
+      
+        font-size: 48px;
+        display: block;
+        color: #fff;
+        font-weight: 600;
+      
+        padding: 0;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.8);
+      
+      
+          
+         
+      }
+      .counter_up_wrapper{
+        padding-top: 100px;
+      }
+      
+      @media only screen and(max-device-width:720px){
+        .all_items{
+        display: grid;
+        }
+        .count{
+          width: 100%;
+          max-width: 1500px;
+          padding: 0 15px;
+          border-radius:15px;
+          height:120px;
+          box-sizing: border-box;
+          margin: auto;
+          font-family: 'Bebas Neue', cursive;
+        
+          background:url("https://appconsole.coffeecup.com/Images/counts-bg.png") center center no-repeat;
+          padding: 80px 0 60px 0;
+        
+          font-size: 48px;
+          display: block;
+          color: #fff;
+          font-weight: 600;
+        
+          padding: 0;
+          color: rgba(255, 255, 255, 0.8);
+        
+        
+            
+           
+        }
+        .single_counter_item h4{
+          color: #be2edd;
+          font-size: 22px;
+          line-height: 36px;
+        }
+      
+      }
+      .all_items{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 20%;
+        padding-top:20px;
+          
+      }
+      
+      .single_counter_item{
+        text-align: center;
+      }
+      .single_counter_item h4{
+        color: #be2edd;
+        font-size: 22px;
+        line-height: 36px;
+      }
+      .single_counter_item h3{
+        color: #ffffff;
+        font-size: 36px;
+        line-height: 46px;
+      }
+      
+      
    #ok {
       position: absolute;
       top: 50%; 
