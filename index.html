@@ -30,6 +30,11 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.css" />
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.js"></script>
+<link type="text/css" rel="stylesheet" href="./src/materialize.min.css" media="screen,projection">
+<link rel="stylesheet" href="../dist/snackbar.min.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="./src/prism.css" media="screen" title="no title" charset="utf-8">
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -60,6 +65,7 @@ return false;
 </script>
   
 
+
 <script>
     jQuery(document).ready(function($){
 $(document).keydown(function(event) {
@@ -89,23 +95,42 @@ return false;
   </script>
   </head>
   <body background="https://entertainment-rick.coffeecup.com/background.jpg">
+    <script>
+    AOS.init();
+    
+     
+     AOS.init({
+  // Global settings:
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  duration: 900,
+     once: true,
 
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: true, // whether elements should animate out while scrolling past them
+
+});
+
+    </script>
    <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZT5XJ9"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
     <div class="grad-bar"></div>
+
     <div class="origin">
-    <div id="bar">
-  
+      <div id="readd">
+    <div id="bar" data-offset-top="91">
+   
         <div class="mobilelogo">
          <img class="image" src="new.PNG">
         </div>
       </div>
     </div>
-      
-        
+  
+</div>
+       
 <div class="intro">
 
   <div class="pie pie1" onclick="location.reload() ,document.body.classList.remove('active')">
@@ -147,24 +172,77 @@ return false;
           </g>
         </svg>
   </div>
-
+  <div id="alert">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong> <b>Please Rotate Your Device </b></strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
   <img id="logo" src="https://i.postimg.cc/1tMDPg70/DMDIKcy-Ws-AEs-KDj.jpg" alt="background" >
   <script>
-    window.onscroll = function() {myFunction()};
+window.onscroll = function() {myFunction()};
     
-    var navbar = document.getElementById("bar");
+    var navbar = document.getElementById("readd");
     var sticky = navbar.offsetTop;
     
     function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navbar.classList.add("sticky");
+        $(".image").css("position","relative");
+        $(".image").css("left","10%");
       } else {
         navbar.classList.remove("sticky");
+        if($(window).width() < 767)
+{
+  $(".image").css("left","35%");
+   // change functionality for smaller screens
+} else {
+   // change functionality for larger screens
+   $(".image").css("left","70%");
+}
       }
     }
+
+    $(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 500 || $(window).scrollTop() + $(window).height() == $(document).height()) {
+    $(".mob-whjr").css("display","none");
+   }else{
+    $(".mob-whjr").css("display","block");
+   }
+});
+
+
     </script>
     
     
+    <style>
+      @media all and (orientation:landscape) {
+       #alert{
+         display:block;
+       }
+    }
+    @media all and (orientation:portrait) {
+       #alert{
+         display:none;
+       }
+    }
+    @media only screen and (min-device-width:581px){
+      #alert{
+         display:none;
+       }
+    }
+      .sticky{
+        position:relative;
+      position: -webkit-sticky;
+      position: sticky;
+      
+      top:0%;
+      overflow-x:hidden;
+}
+      
+    </style>
   
    <div id="new"></div>
   
@@ -194,9 +272,9 @@ return false;
   </style>
 
     <div class="rapid" >
-      <p>Upasyo is a<span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+      <p>Upasyo is a<span class="typed-text" ></span><span class="cursor">&nbsp;</span></p>
     </div>
- 
+
 
 </div>
 <script src="type.js"></script>
@@ -253,7 +331,7 @@ return false;
 
   <style>
     .sticky {
-  position: fixed;
+  position:fixed;
   top: 0;
   width: 100%;
 }
@@ -314,8 +392,9 @@ return false;
 
   </style>
   
-<div id="let">
-<div id="profie">
+
+<div id="let" >
+<div id="profie"data-aos="fade-left">
 <div class="myself" style="width: 18rem; text-align:center">
 
   <img class="profile" src="https://i.postimg.cc/pVmkkLHV/UPASYO-S-PROFILE-IMAGE.jpg" class="card-img-top" alt="...">
@@ -339,6 +418,19 @@ $(".follow").html('<b>Thanks for Following   </b><svg fill="lightgreen" xmlns="h
 $(".follow").css("outline","0");
 });
 
+
+</script>
+<script>
+if (navigator.userAgent.indexOf('Chrome') < 0) {
+  // the user is NOT running Chrome
+  $("body").css("display","none");
+ 
+  alert("Use Only Chrome Browser to Aceess This Site");
+  
+}else{
+  $("body").css("display","block");
+}
+    
 
 </script>
 <style>
@@ -403,13 +495,14 @@ font-size:18px;
         -ms-user-select: none; /* IE 10 and IE 11 */
         -webkit-user-drag: none;
         transition: 1s;
+       
+        
       }
-      @media only screen and (max-device-width:720px){
+      @media only screen and (max-device-width:900px){
       .myself{
         display:block;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);   
-        max-width: 300px;
-        margin: auto;
+        max-width: 350px;
         height:480px;
         text-align: center;
         font-family: arial;
@@ -417,7 +510,8 @@ font-size:18px;
         user-select:none;
         transition: 1s;
         outline:0;
-      
+        position:static;
+        z-index:100;
       
       }
       }
@@ -441,7 +535,7 @@ font-size:18px;
       transition:1s;
       outline:0;
       }
-      @media only screen and (max-device-width:720px){
+      @media only screen and (max-device-width:900px){
         .profile{
        width:250px;
        height:250px;
@@ -462,12 +556,113 @@ font-size:18px;
 
 </div>
 
-<div class="profile-text">
+<div class="profile-text" data-aos="fade-right">
   <div class="wrapper" >
-    <h2 id="na"style="font-size:70px;"><b>Upasyo is a <br>Professional Coder</b></h2>
+    <img id="whjr-prf"src='https://i.postimg.cc/vmQ5Z37k/whjr.png' border='0' alt='whjr'/>
   </div>
+  <div class="whjr">
+    <a href="https://upasyokushari.whjr.site" class="all all-white btn-animate">VISIT UPASYO'S PROFILE ON WHITEHAT.JR</a>
+</div>
   </div>
+
+</div>
+<script>
+function detectrotate(){
+  alert("Rotate Your Device to Normal Mode");
+}
+</script>
 <style>
+@media all and (orientation:landscape) {
+  
+}
+</style>
+<style>
+@media only screen and (min-device-width:300px){
+  .mob-whjr{
+    min-width:900px;
+  }
+}
+#whjr-prf{
+  height:300px;
+  width:600px;
+  padding-left:10%;
+}
+#whjr-prf:hover {
+  opacity:1;
+}
+.whjr {
+   padding-left:90px;
+   font-weight:880;
+   width:700px;
+}
+
+
+
+.all:link,
+.all:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.all:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: #FFFF;
+}
+
+.all:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.all-white {
+    background-color: #FF8D1A;
+    color: #FFFF;
+}
+
+.all::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.all-white::after {
+    background-color: #ffff;
+}
+
+.all:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.all-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 
 #na {
 		color: #fff;
@@ -479,6 +674,7 @@ font-size:18px;
 		background-size: auto auto;
 		background-clip: border-box;
 		background-size: 200% auto;
+    font-size:65px;
 		color: #fff;
 		background-clip: text;
 		-webkit-background-clip: text;
@@ -498,9 +694,9 @@ font-size:18px;
 
   .profile-text {
   display:inline-block;
-  position:absolute;
+  position:fixed;
   padding-left:100px;
-  padding-top:10%;
+  padding-top:8%;
     
 }
      
@@ -512,18 +708,182 @@ font-size:18px;
     display: flex;
   justify-content: space-between;
   }
-  @media only screen and (max-device-width:720px){
-    .profile-text {
-  display:none;
-    
+ @media only screen and (max-device-width:1110px){
+   .wrapper{
+     display:none;
+   }
+ }
+</style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  $('button').click(function() {
+  $(this).attr('target', '_blank');
+});
+$('a').click(function() {
+  $(this).attr('target', '_blank');
+});
+</script>
+
+<div class="aeria">
+  <button class="mob-whjr" onClick="parent.location='https://upasyokushari.whjr.site'"><b>Visit Profile on Whitehat.Jr</b>
+    <i class="shine"></i>
+  </button>
+</div>
+<style>
+
+.aeria{
+    position: -webkit-sticky;
+  position: sticky;
+  top:95%;
 }
-  }
+.mob-whjr {
+ 
+  outline:0;
+/*  styling */
+  display: block;
 
+  text-decoration: none;
+	letter-spacing: 2px;
+  word-spacing:4px;
+	color: #FAFAFA;
+	border: 3px solid #ff8d1a;
+	padding: 15px;
+  font-size:20px;
+   
+  border-radius:15px;
+  height:65px;
+/*  centering */
+	position: absolute;
+	text-align: center;
+  top:20%;
+	left: 50%;
+	
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	background: #ff8d1a;
 
+	transition:1s
+}
+.mob-whjr:hover {
+		opacity:0.9;
+  transition:1s;
+  outline:0;
+	}
+
+.shine {
+/*   positioning */
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		left: 0;
+  
+/*   gradient   */
+		background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.03) 3%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.85) 90%, rgba(255,255,255,0.85) 90%, rgba(255,255,255,0.85) 80%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(1%,rgba(255,255,255,0.03)), color-stop(30%,rgba(255,255,255,0.85)), color-stop(50%,rgba(255,255,255,0.85)), color-stop(70%,rgba(255,255,255,0.85)), color-stop(71%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* IE10+ */
+		background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+    
+/*  forming the shine element
+    play around with the width, skew and gradient to get different effects
+  */
+		width: 15%;
+		height: 100%;
+     transform: skew(-10deg,0deg);
+		-webkit-transform: skew(-10deg,0deg);
+     -moz-transform: skew(-10deg,0deg);
+     -ms-transform: skew(-10deg,0deg);
+     -o-transform: skew(-10deg,0deg);
+  
+/*  animating it  */
+     animation: move 1s;
+		animation-iteration-count: infinite;
+		animation-delay: 1s;
+		-webkit-animation: move 2s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-delay: 1s;
+		-moz-transform: skew(-10deg,0deg);
+		-moz-animation: move 2s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-delay: 1s;
+		-ms-transform: skew(-10deg,0deg);
+		-ms-animation: move 2s;
+		-ms-animation-iteration-count: infinite;
+		-ms-animation-delay: 1s;
+		-o-transform: skew(-10deg,0deg);
+		-o-animation: move 2s;
+		-o-animation-iteration-count: infinite;
+		-o-animation-delay: 1s;
+	}
+
+/*  */
+@keyframes move {
+	0%  { left: 0; opacity: 0; }
+	5% {opacity: 0.0}
+	48% {opacity: 0.2}
+	80% {opacity: 0.0}
+	100% { left: 82%}
+}
+
+@-webkit-keyframes move {
+	0%  { left: 0; opacity: 0; }
+	5% {opacity: 0.0}
+	48% {opacity: 0.2}
+	80% {opacity: 0.0}
+	100% { left: 82%}
+}
+
+@-moz-keyframes move {
+	0%  { left: 0; opacity: 0; }
+	5% {opacity: 0.0}
+	48% {opacity: 0.2}
+	80% {opacity: 0.0}
+	100% { left: 88%}
+}
+
+@-ms-keyframes move {
+	0%  { left: 0; opacity: 0; }
+	5% {opacity: 0.0}
+	48% {opacity: 0.2}
+	80% {opacity: 0.0}
+	100% { left: 82%}
+}
+
+@-o-keyframes move {
+	0%  { left: 0; opacity: 0; }
+	5% {opacity: 0.0}
+	48% {opacity: 0.0}
+	80% {opacity: 0.0}
+	100% { left: 90%}
+}
+
+</style>
+<style>
 
 </style>
 <script>
+if ($(window).width() < 1109) {
+  $(".whjr").remove();
+  $(".mob-whjr").show();
 
+
+}
+else {
+  $(".whjr").show();
+  $(".mob-whjr").remove();
+ 
+}
+if ($(window).width() < 400) {
+  $(".myself").css("margin-left","0%");
+
+}
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -537,8 +897,433 @@ font-size:18px;
     "<br>Longitude: " + position.coords.longitude);
   }
   </script>
+<p>
+  Fineaty WebtoolsWebtools 
+  All tools 
+  Fineaty Webtools 
+  Welcome 
+  
+   
+  Information about the "#00FFFFFF" color
+  Information and details about color in RGB, RGBA, hexadécimal, float, CSS background-color formats
+  Color : *
+  #00FFFFFF
+  Get color details
+  Color information "#00FFFFFF"
+  Hexadecimal : #00FFFFFF
+  Bytes : 0 , 255 , 255 , 255
+  Floats : 0.000 , 1.000 , 1.000 , 1.000
+  CSS : background-color: #00FFFF;
+  Random colors
+  223 , 96 , 0 , 64
+  
+   
+  Recommended link
+  159 , 64 , 0
+  32 , 223 , 159 , 64
+  
+   
+  Recommended link
+  #80402020
+  255 , 96 , 223 , 128
+  
+   
+  Recommended link
+  
+   
+  
+   
+  © 2017-2021 Fineaty Webtools
+  Service edited by Sigmagine
+   
+  Cookies usage	close
+  By continuing to browse this website you accept the use of cookies and enjoy all its features. More info ...
+  
+  I got it, I agree !
+  WhiteHat Jr logo
+  
+  Curriculum + Pricing
+  Buy a Course
+  Math
+  NEW
+  Join Class Now
+  Already Booked a Class ?
+  
+  Book a FREE Trial
+  WhiteHat Jr Live 1:1 Online Classes
+  Inspire Kids today to Become Creators of Tomorrow
+  
+  
+  Learn to Code
+  Grade 1-12
+  Book a FREE Coding Class
+  
+  Create with Math
+  Grade 1-8
+  Book a FREE Math Class
+  Learn more
+  
+  26 of our students will collaborate with the leaders of Silicon Valley
+  Having decoded the Silicon Valley Challenge, 26 of our best and brightest are set to learn from and work with the engineers, entrepreneurs and VC's from the Valley. Learn how these 26 become our Silicon Valley Superheroes.
+  
+  
+  View Our Superheroes
+  
+  Book a FREE Trial
+  4.7+ out of 5 stars from 8.6k+ reviews by our students
+  
+  Make your kid a creator for life by unlocking these milestones
+  START
+  Game Developer Certificate
+  Skill : Game Development
+  08
+  Classes
+  Young Visionary
+  Skill : Advanced Programming
+  App Developer Certificate
+  Skill : App Development
+  Silicon Valley Challenge
+  Skill :Solving real life problems using technology
+  48
+  Classes
+  18 Under 18
+  Skill: Building you own company
+  144
+  Classes
+  
+  Book a FREE Trial
+  Join 1 million+ students worldwide,
+  certified by WhiteHat Jr
+  featured-articles
+  Shreya Kathare - Age 11 , Class 5
+  Shreya developed a school website which effectively communicated the school's vision and mission.
+  featured-articles
+  Roy Nunez
+  Roy built an Air Hockey Battle app that allows you to play Air Hockey on your phone.
+  featured-articles
+  Dhruva Shah - Age 13 , Class 8
+  Dhruva created a Space Shooter Game which resembles outer space
+  featured-articles
+  Anthony Watkins
+  Anthony built Control the Drone app that allows him to maneuver his own drone
+  featured-articles
+  Shridhar Shrivastav - Age 13 , Class 8
+  Shridhar built a Bubble Shooting Game which allows players to shoot and win over enemies
+  featured-articles
+  Skandini Nandan - Age 13 , Class 8
+  Skandini B built an Origami Website which explains step by step method to create
+  featured-articles
+  Christian Sheeder
+  Christian developed Polio Vaccine Calculator app to keep a tab on vaccines required for kids
+  featured-articles
+  Kiara Bhandari - Age 8 , Class 3
+  Kiara built a Restaurant application which allows restaurants to take online orders
+  
+  Book a FREE Trial
+  Why Coding for Kids?
+  CREATIVITY SCORES AT GENIUS LEVEL
+  
+  
+  Your kids can learn logic, structure, sequence and creative expression
+  George Land & Beth Jarman's landmark NASA study identified that kids
+  peak in creativity at age 6, followed by a gradual decline as they
+  grow up.
+  
+  The real promise of coding is not that kids will become computer engineers.
+  Coding is a fun tool for kids to exercise their desire to build,
+  curiosity to question, imagination to explore - the traits that will serve any child
+  well in nearly any career, in every hobby, and in life.
+  
+  
+  Book a FREE Trial
+  Your Kids Will Learn
+  Logic
+  Structure
+  Creative Thinking
+  Sequencing
+  Algorithmic Thinking
+  WhiteHat Jr Superstars
+  whitehat-superstarts
+  whitehatjr-superstars
+  whitehat-superstarts
+  whitehatjr-superstars
+  whitehat-superstarts
+  1/5
+  David Chea, Age 10
+  
+  Proud WhiteHat Jr Alumni
+  
+  Created 'Safe zone' App that marks zones which are not safe for children and provides alerts if someone is entering this area.
+  
+  whitehat-superstarts
+  whitehat-superstarts
+  2/5
+  Hiranya Rajni, Age 7
+  
+  Proud WhiteHat Jr Alumni
+  
+  Created a 'Sign Language' App which allows people to communicate with hearing impaired individuals using the American Sign Language. She was also covered by Forbes.
+  
+  whitehat-superstarts
+  3/5
+  Mae Mae, Age 9
+  
+  Proud WhiteHat Jr Alumni
+  
+  Created 'Anti Bullying' App which allows children to report incidents of bullying and harassment in a quick and standardised way. Her app was also recognised by Hon’ble HRD minister.
+  
+  whitehat-superstarts
+  whitehat-superstarts
+  4/5
+  Shaurya Sharma, Age 12
+  
+  Proud WhiteHat Jr Alumni
+  
+  Created a 'Slack for School' App which allows students and teachers to engage in a more meaningful manner, with exchange of homework and conversations.
+  
+  whitehat-superstarts
+  whitehat-superstarts
+  5/5
+  Yuvraj Shah, Age 11
+  
+  Proud WhiteHat Jr Alumni
+  
+  Created 'Med Maze' app that helps connect individuals who have medicines that are about to expire with people who need them and cannot afford them.
+  
+  whitehat-superstarts
+  whitehat-superstarts
+  
+  
+  Saira’s video, Age 9,
+  WhiteHat Jr Coder
+  Learn how Saira became a Math wizard with WhiteHat Jr coding!
+  
+  Book a FREE Trial
+  Close
+  750,000 Student Projects & Counting
+  featured-articlesfeatured-profile
+  Beginner
+  
+  Ambulance Whizz
+  
+  Brinda
+  featured-articlesfeatured-profile
+  Beginner
+  
+  School Chat App
+  
+  Shreyans Shah
+  featured-articlesfeatured-profile
+  Intermediate
+  
+  DYSXA App
+  
+  Shouradeep Sarkar
+  featured-articlesfeatured-profile
+  Advanced
+  
+  Pat a Pet App
+  
+  Agastya Yadav
+  featured-articlesfeatured-profile
+  Professional
+  
+  The Escape Game
+  
+  Aaron Ghosh
+  featured-articlesfeatured-profile
+  Beginner
+  
+  Ambulance Whizz
+  
+  Brinda
+  featured-articlesfeatured-profile
+  Beginner
+  
+  School Chat App
+  
+  Shreyans Shah
+  featured-articlesfeatured-profile
+  Intermediate
+  
+  DYSXA App
+  
+  Shouradeep Sarkar
+  featured-articlesfeatured-profile
+  Advanced
+  
+  Pat a Pet App
+  
+  Agastya Yadav
+  featured-articlesfeatured-profile
+  Professional
+  
+  The Escape Game
+  
+  Aaron Ghosh
+  Want to learn how to create such awesome projects?
+  
+  Book a FREE Trial
+  Curriculum & Pricing
+  Beginner
+  (Grade 1)
+  Intermediate
+  (Grade 2-3)
+  Advanced
+  (Grade 4-6)
+  Professional
+  (Grade 7-9)
+  Applied Tech
+  (Grade 10+)
+  Introduction to Coding
+  8 Classes
+  SAVE 4%
+  Curriculum Includes
+  Sequence, Fundamentals Coding Blocks, Loops
+  View Detailed curriculum
+  Rs. 5,999
+  Rs. 6,299
+  Price Per Class Rs. 750
+  
+  Buy Now
+  Achievements
+  Introduction To Coding
+  Advance Coding with Space Tech
+  144 Classes
+  SAVE 7%
+  Curriculum Includes
+  Introduction to Coding
+  App Developer Certificate
+  Extended UI/UX, Rich GUI app, Space Tech simulation in Space Lab / Game Lab, Professional Game Design
+  View Detailed curriculum
+  BEST VALUE
+  Rs. 99,999
+  Rs. 107,999
+  Price Per Class Rs. 694
+  
+  Buy Now
+  Achievements
+  Lifetime Access
+  Space Tech
+  18 Under 18 Fellowship
+  App Developer Certificate
+  48 Classes
+  SAVE 5%
+  Curriculum Includes
+  Introduction to Coding
+  Events / UI,Conditionals, Complex Loop, Logic Structures, Turtle Coding
+  View Detailed curriculum
+  MOST POPULAR
+  Rs. 33,999
+  Rs. 35,999
+  Price Per Class Rs. 708
+  
+  Buy Now
+  Achievements
+  Introduction To Coding
+  Publish your app To Playstore
+  Top 1% to go to Silicon Valley
+  *Courses have lifetime validity. Cancel anytime from the enrollment day for no-questions-asked 100% refund.
+  
+  Book a FREE Trial
+  Our Expert Coding Educators
+  teacher-step
+  Top 1% teachers selected by an industry-leading 4-step teacher assessment process by top 1% of early childhood coding experts
+  WhiteHat Jr follows a rigorous 4-Step Selection Process for confirming teacher candidates so your kids are taught by the Top Early Childhood Coding Experts.
+  
+   
+  View Live Comment
+  
+  Book a FREE Trial
+  4.7+ out of 5 stars from 8.6k+ reviews by our students
+  Meet our IIT and IB-trained Curriculum Creators
+  curriculumCreator
+  Dr. Farida Khan
+  PHD IITB, Gold Medalist
+  curriculumCreator
+  Rajeev Jha
+  Advanced Game Designer, TFI Fellow.
+  curriculumCreator
+  Abhijeet Gawande
+  IB Educational Technologist, AI Expert
+  curriculumCreator
+  Gauri Parulkar
+  Computer Scientist, Entrepreneur, Science Quotient
+  curriculumCreator
+  Rahul Singh
+  Data Scientist, Deep Learning & NLP expert.
+  Create With Math helps your child build remarkable things and become future ready!
+  Learn more
+  
+  Book a FREE Math Trial
+  Join the WhiteHat Jr Revolution
+  Book a FREE Trial Class on the go
+  Book your free class from anywhere with the WhiteHat Jr class booking app
+  
+  
+  
+  mobile devicemobile-device
+  
+  0
+  No. of Registered Teachers
+  
+  
+  0
+  No. of Registered Students
+  
+  
+  0
+  No. of Classes Taken
+  
+  WhiteHat Jr has been Featured In
+  WhiteHat Jr is the top coding learning platform for young minds.
+  
+  Book a FREE Trial
+  
+  Do you want your kid to create the world’s next big tech platform? WhiteHat Jr's mission is to empower a whole generation to become creators versus consumers of technology. We teach fundamentals of coding--logic, structure, sequence and algorithmic thinking to enable kids to generate creative outcomes like websites, animations and apps.
+  
+  Important Links
+  Teacher Login
+  Student Login
+  Register
+  Space Explore Program
+  More
+  Terms & Conditions
+  Privacy Policy
+  Fulfillment Policy
+  Help Desk
+  *
+  Some of the WhiteHat Jr classes are powered by Code.org which is completely free to access.
+  
+  About WhiteHat Jr
+  Today, in the computer age, not all schools teach coding in early childhood resulting in a major gap in the requirements of the new world and our children's skills. WhiteHat Jr introduces and prepares your kid from 6-18 years for this new coding world. They learn fundamentals of coding--logic, structure, sequence and algorithmic thinking--to generate creative outcomes like animations and apps. All classes are taught Live 1:1 Online in the comfort of your home by Top 1% selected teachers and subject matter experts.
+  
+  Coding For Kids
+  Whether you are a student interested in the IT careers that you could explore with a coding qualification or just fascinated by the world of tech and coding courses, WhiteHat Jr offers a wide range of online coding courses that make coding accessible to kids and young teenagers. We've put together a simple guide to answer some of the most commonly asked questions from parents and prospective students to help you understand the basics of what our kids programming courses cover, whether they are right for your kids and how best to navigate them.
+  
+  Curious about what is involved in courses for coding for kids?
+  We have developed kids programming courses that allow kids, teens, and young adults to learn how to code at all ages with proper coding classes and in an environment that works for them – Online. The courses offered by WhiteHat Jr are designed to teach kids to code with core programming skills, and then improve the proficiency of the kids coding languages. Our facilitators align digital literacy into coding courses, as required by the existing skills of the learners. Since our curriculum is developed by industry experts and the most important activity of teaching coding is done by top 1% selected teachers, learners get state of the art education through our propriety, creative activity based curriculum.
+  
+  Are coding classes for kids suitable?
+  When you're a parent exploring the possibilities that coding classes for kids can bring, you 're probably wondering whether coding courses will suit your child. The benefits of learning to code courses extend far beyond future job opportunities. WhiteHat Jr teaches coding for kids in programs designed to stimulate creativity, problem-solving skills, and academic performance overall. Over the longer term, online coding courses are a great way to train learners for an increasingly tech-oriented world.
+  
+  What will you learn in a coding course for kids?
+  WhiteHat Jr's coding courses are oriented towards coding and programming. You will learn:
+  
+  The essentials of coding: Logic, Structure, Sequence
+  How to create Websites, Animations & Apps
+  How to manipulate data using programming languages
+  How to be a problem solver
+  How technologies converse with each other
+  Start to learn coding with us!
+  If you are a motivated parent and passionate about technology and where it can lead you to, then Join now. If you or your child would like to find out more about the opportunities provided by our coding programs, explore the kids programming courses offered by WhiteHat Jr and consider enrolling for a free trial. Remember, no coding experience beforehand is required.
+  
+  Copyright WhiteHat Education Technology Pvt ltd © 2021. All Rights Reserved
+  Made with
+  in India.
+  Up
+  Scroll to Top</p>
 
-
-
+ 
     </body>
-	</html>
+	  </html>
